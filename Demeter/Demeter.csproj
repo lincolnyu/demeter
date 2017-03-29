@@ -37,22 +37,14 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inventory\Bin.cs" />
-    <Compile Include="Inventory\Chef.cs" />
-    <Compile Include="Inventory\Freshie.cs" />
-    <Compile Include="Helpers\PickHelper.cs" />
-    <Compile Include="Helpers\StorageHelper.cs" />
-    <Compile Include="Elemental\Item.cs" />
-    <Compile Include="Elemental\ItemType.cs" />
-    <Compile Include="Elemental\KitchenManager.cs" />
-    <Compile Include="Inventory\Ingredient.cs" />
-    <Compile Include="Inventory\Mover.cs" />
-    <Compile Include="Inventory\PickPreferences.cs" />
-    <Compile Include="Elemental\Processor.cs" />
+    <Compile Include="Abstract\Processor.cs" />
+    <Compile Include="Abstract\Item.cs" />
+    <Compile Include="Abstract\IProcessingContext.cs" />
+    <Compile Include="Entities\Node.cs" />
+    <Compile Include="Entities\Recipe.cs" />
+    <Compile Include="Entities\Storage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Inventory\Recipe.cs" />
-    <Compile Include="Elemental\Task.cs" />
-    <Compile Include="Inventory\StorageType.cs" />
+    <Compile Include="Management\Repertoire.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
