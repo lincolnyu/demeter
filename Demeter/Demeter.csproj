@@ -37,12 +37,21 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Processor.cs" />
-    <Compile Include="Abstract\Item.cs" />
+    <Compile Include="Abstract\IItemType.cs" />
+    <Compile Include="Abstract\IClonable.cs" />
+    <Compile Include="Abstract\IProcessor.cs" />
+    <Compile Include="Abstract\IItem.cs" />
     <Compile Include="Abstract\IProcessingContext.cs" />
-    <Compile Include="Entities\Node.cs" />
+    <Compile Include="Abstract\Node.cs" />
+    <Compile Include="Abstract\CompositeNode.cs" />
+    <Compile Include="Entities\BaseItem.cs" />
+    <Compile Include="Entities\BaseType.cs" />
+    <Compile Include="Entities\Mix.cs" />
+    <Compile Include="Entities\RecipeContext.cs" />
+    <Compile Include="Entities\Stuff.cs" />
     <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\Storage.cs" />
+    <Compile Include="Entities\StuffType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Repertoire.cs" />
   </ItemGroup>

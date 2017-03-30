@@ -1,6 +1,6 @@
 ﻿namespace Demeter.Abstract
 {
-    public abstract class Item
+    public interface IItem : IClonable<IItem>
     {
         /// <summary>
         ///  Whether the item is completely consumed and turned into something else
@@ -9,8 +9,8 @@
         ///  In this case any entity that references this item should be aware and 
         ///  take due actions (like de-referencing it)
         /// </remarks>
-        public abstract bool IsNull { get; }
+        bool IsNull { get; }
 
-        public abstract Item Clone();
+        IItemType<IItem> ItemType { get; }
     }
 }

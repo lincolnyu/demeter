@@ -2,7 +2,7 @@
 
 namespace Demeter.Entities
 {
-    public abstract class Storage : Processor
+    public abstract class Storage : Node
     {
     }
 }
