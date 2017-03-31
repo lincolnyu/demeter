@@ -46,8 +46,10 @@
     <Compile Include="Abstract\CompositeNode.cs" />
     <Compile Include="Entities\BaseItem.cs" />
     <Compile Include="Entities\BaseType.cs" />
+    <Compile Include="Entities\IHasName.cs" />
     <Compile Include="Entities\Mix.cs" />
     <Compile Include="Entities\RecipeContext.cs" />
+    <Compile Include="Entities\RecipeCreator.cs" />
     <Compile Include="Entities\Stuff.cs" />
     <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\Storage.cs" />
