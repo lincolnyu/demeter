@@ -1,4 +1,5 @@
 ﻿using Demeter.Entities.Ingredients;
+using QSharp.Scheme.Utility;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,23 +13,22 @@ namespace Demeter.Entities
             Minimum
         }
 
-        private Dictionary<Recipe, IList<IList<SyntaxLeaf>>> RecipeCache = new Dictionary<Recipe, IList<IList<SyntaxLeaf>>>();
+        private Cache<Recipe, IList<IList<SyntaxLeaf>>> _recipeTraversalCache;
+
+        public IngredientDispenser(uint cacheSize)
+        {
+            var policy = new LruCachePolicy<Recipe, IList<IList<SyntaxLeaf>>>(cacheSize);
+            _recipeTraversalCache = new Cache<Recipe, IList<IList<SyntaxLeaf>>>(GetTraversal, policy.UpdateCache);
+        }
 
         public bool Dispense(Stock stock, Recipe recipe, double serve, int altnumber, DispenseModes mode)
         {
             throw new System.NotImplementedException();
         }
 
-        private IList<IList<SyntaxLeaf>> Flatten(Recipe recipe)
-        {
-            IList<IList<SyntaxLeaf>> result;
-            if (!RecipeCache.TryGetValue(recipe, out result))
-            {
-                result = recipe.Root.Traverse().ToList();
-                RecipeCache[recipe] = result;
-            }
-            return result;
-        }
+        private IList<IList<SyntaxLeaf>> GetTraversal(Recipe key) => key.Root.Traverse().ToList();
+        
+        private IList<IList<SyntaxLeaf>> Flatten(Recipe recipe) => _recipeTraversalCache.Get(recipe);
 
         private bool Dispense(Stock stock, IList<SyntaxLeaf> leaves, double serve, DispenseModes mode)
         {

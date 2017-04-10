@@ -66,6 +66,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Repertoire.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\qsharp\QSharp\QSharp.Scheme.Utility\QSharp.Scheme.Utility.csproj">
+      <Project>{675ad4fb-c3d9-4a41-84c9-8ebe047742ae}</Project>
+      <Name>QSharp.Scheme.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
