@@ -3,9 +3,15 @@ using Demeter.Abstract;
 
 namespace Demeter.Entities
 {
-    public class RecipeContext : IProcessingContext
+    public class FoodProcessingContext : IProcessingContext
     {
-        public delegate RecipeContext CreateContext();
+        public enum ProcessingModes
+        {
+            Greedy,
+            MatchOnly
+        }
+
+        public delegate FoodProcessingContext CreateContext();
 
         public virtual string Result
         {
@@ -16,7 +22,11 @@ namespace Demeter.Entities
         {
             get; set;
         }
-        
+
+        public Recipe Recipe { get; set; }
+
+        public ProcessingModes Mode { get; set; }
+
         public void Reset()
         {
             throw new NotImplementedException();
