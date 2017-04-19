@@ -7,8 +7,7 @@ namespace Demeter.Entities.Ingredients
     {
         public static IEnumerable<IList<SyntaxLeaf>> Traverse(this SyntaxNode node)
         {
-            var br = node as SyntaxBranch;
-            if (br != null)
+            if (node is SyntaxBranch br)
             {
                 switch (br.Operator)
                 {
@@ -32,8 +31,7 @@ namespace Demeter.Entities.Ingredients
                 }
                 yield break;
             }
-            var leaf = node as SyntaxLeaf;
-            if (leaf != null)
+            else if (node is SyntaxLeaf leaf)
             {
                 yield return new List<SyntaxLeaf> { leaf };
             }

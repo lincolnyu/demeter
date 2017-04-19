@@ -48,10 +48,7 @@
     <Compile Include="Abstract\CompositeNode.cs" />
     <Compile Include="Entities\BaseItem.cs" />
     <Compile Include="Entities\BaseType.cs" />
-    <Compile Include="Entities\BoundIngredients.cs" />
-    <Compile Include="Entities\Component.cs" />
     <Compile Include="Entities\IngredientDispenser.cs" />
-    <Compile Include="Entities\Ingredient.cs" />
     <Compile Include="Entities\FoodProcessingContext.cs" />
     <Compile Include="Entities\Ingredients\SyntaxTreeHelper.cs" />
     <Compile Include="Entities\Ingredients\SyntaxLeaf.cs" />
@@ -63,6 +60,7 @@
     <Compile Include="Entities\FoodProcessor.cs" />
     <Compile Include="Entities\StuffType.cs" />
     <Compile Include="Entities\WeightRange.cs" />
+    <Compile Include="Management\TraversalHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Repertoire.cs" />
   </ItemGroup>
